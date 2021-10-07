@@ -18,6 +18,9 @@ public class Main {
                 case 1 -> new ArrayProcess(scan);
                 case 2 -> new TreeNumberMax(scan);
                 case 3 -> new NumberComponent(scan);
+                case 4 -> new NumberFrequency(scan);
+                case 5 -> new Palindrom(scan);
+                case 6 -> new Pyramid(scan);
             }
         }
     }
