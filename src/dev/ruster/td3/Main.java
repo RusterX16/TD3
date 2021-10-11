@@ -25,8 +25,9 @@ public class Main {
                 case 5 -> new Palindrome(scan);
                 case 6 -> new SimplePyramid(scan);
                 case 7 -> new ComplexPyramid(scan);
-                case 8 -> new SyracuseNumber(scan);
-                case 9 -> new Exponential(scan);
+                case 8 -> new Triangle(scan);
+                case 9 -> new SyracuseNumber(scan);
+                case 10 -> new Exponential(scan);
             }
         }
     }

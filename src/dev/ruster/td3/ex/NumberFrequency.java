@@ -11,6 +11,7 @@ public record NumberFrequency(Scanner scan) {
         this.scan = scan;
 
         System.out.println(Arrays.toString(frequency(29562)));
+        System.out.println(allDifferent(12892));
     }
 
     /*
@@ -36,8 +37,8 @@ public record NumberFrequency(Scanner scan) {
     */
 
     public int @NotNull [] frequency(int n) {
-        int[] array = new int[10];
-        int[] output = new int[array.length];
+        int[] array = new int[NumberComponent.length(n)];
+        int[] output = new int[10];
         Arrays.fill(output, 0);
 
         for(int i = 0; i < array.length; i++) {
@@ -53,5 +54,18 @@ public record NumberFrequency(Scanner scan) {
             }
         }
         return output;
+    }
+
+    public boolean allDifferent(int n) {
+        int[] array = frequency(n);
+        boolean different = true;
+
+        for(int i : array) {
+            if(i > 1) {
+                different = false;
+                break;
+            }
+        }
+        return different;
     }
 }

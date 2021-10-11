@@ -31,6 +31,21 @@ public record NumberComponent(Scanner scan) {
         return numberCount(n * n);
     }
 
+    public static int length(int n) {
+        boolean canBeDivided = true;
+        int count = 0;
+
+        while(canBeDivided) {
+            if(n < 10) {
+                canBeDivided = false;
+            }
+            n /= 10;
+            count++;
+        }
+        return count;
+        //return String.valueOf(n).length();
+    }
+
     public static int getNumberUnit(int n) {
         boolean canBeDivided = true;
 
