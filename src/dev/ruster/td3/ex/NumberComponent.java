@@ -6,8 +6,9 @@ import java.util.Scanner;
 
 public record NumberComponent(Scanner scan) {
 
-    public NumberComponent(@NotNull Scanner scan) {
+    public NumberComponent(@NotNull final Scanner scan) {
         this.scan = scan;
+        
         System.out.println(squareNumberCount(scan.nextInt()));
     }
 
@@ -28,5 +29,18 @@ public record NumberComponent(Scanner scan) {
 
     public int squareNumberCount(int n) {
         return numberCount(n * n);
+    }
+
+    public static int getNumberUnit(int n) {
+        boolean canBeDivided = true;
+
+        while(canBeDivided) {
+            if(n < 10) {
+                canBeDivided = false;
+                continue;
+            }
+            n %= 10;
+        }
+        return n;
     }
 }

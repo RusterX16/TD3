@@ -7,8 +7,9 @@ import java.util.Scanner;
 
 public record ArrayProcess(Scanner scan) {
 
-    public ArrayProcess(final Scanner scan) {
+    public ArrayProcess(@NotNull final Scanner scan) {
         this.scan = scan;
+
         processIntArray();
         System.out.println();
     }
@@ -44,7 +45,9 @@ public record ArrayProcess(Scanner scan) {
         System.out.println("Moyenne : " + getAverage(array));
 
         for(int i = 0; i < array.length; i++) {
-            array[i] += 1;
+            if(array[i] % 2 == 0) {
+                array[i] += 1;
+            }
         }
         System.out.print("Tableau modifié : " + Arrays.toString(array));
     }

@@ -6,15 +6,16 @@ import org.jetbrains.annotations.NotNull;
 import java.util.Arrays;
 import java.util.Scanner;
 
-public record Palindrom(Scanner scan) {
+public record Palindrome(Scanner scan) {
 
-    public Palindrom(Scanner scan) {
+    public Palindrome(@NotNull final Scanner scan) {
         this.scan = scan;
-        System.out.println(isPalindrom(new char[]{'K', 'A', 'Y', 'A', 'K'}));
+
+        System.out.println(isPalindrome(new char[]{'K', 'A', 'Y', 'A', 'K'}));
     }
 
     @Contract(pure = true)
-    public boolean isPalindrom(char @NotNull [] array) {
+    public boolean isPalindrome(char @NotNull [] array) {
         int size = array.length;
         char[] output = new char[size];
 

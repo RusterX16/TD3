@@ -14,13 +14,19 @@ public class Main {
             int choice = scan.nextInt();
 
             switch(choice) {
-                case 0 -> System.exit(0);
+                case 0 -> {
+                    System.out.println("Merci ! A la prochaine !");
+                    System.exit(0);
+                }
                 case 1 -> new ArrayProcess(scan);
                 case 2 -> new TreeNumberMax(scan);
                 case 3 -> new NumberComponent(scan);
                 case 4 -> new NumberFrequency(scan);
-                case 5 -> new Palindrom(scan);
-                case 6 -> new Pyramid(scan);
+                case 5 -> new Palindrome(scan);
+                case 6 -> new SimplePyramid(scan);
+                case 7 -> new ComplexPyramid(scan);
+                case 8 -> new SyracuseNumber(scan);
+                case 9 -> new Exponential(scan);
             }
         }
     }

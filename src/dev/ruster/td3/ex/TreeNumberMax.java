@@ -6,10 +6,11 @@ import java.util.Scanner;
 
 public record TreeNumberMax(Scanner scan) {
 
-    public TreeNumberMax(final @NotNull Scanner scan) {
+    public TreeNumberMax(@NotNull final Scanner scan) {
         this.scan = scan;
 
         System.out.println(max3(scan.nextInt(), scan.nextInt(), scan.nextInt()));
+        System.out.println();
     }
 
     public int max2(int a, int b) {
