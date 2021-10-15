@@ -18,6 +18,7 @@ public record ComplexPyramid(Scanner scan) {
         displayDecreasesNumbers(scan.nextInt(), scan.nextInt());
         */
 
+        System.out.print("n : ");
         pyramid(scan.nextInt());
         System.out.println();
     }
@@ -59,17 +60,19 @@ public record ComplexPyramid(Scanner scan) {
     }
 
     public void pyramid(int n) {
-        int[] array = new int[n];
+        int count = -1;
 
         for(int i = 0; i < n; i++) {
+            count += 2;
+
             for(int j = n - i; j > 1; j--) {
-                System.out.print(" ");
+                System.out.print("  ");
             }
-            for(int j = 0; j <= i; j += 2) {
-                System.out.print(array[j] + " ");
+
+            for(int j = -i; j <= i; j++) {
+                System.out.print(NumberComponent.getNumberUnit(count + (j >= 0 ? -j : j)) + " ");
             }
             System.out.println();
         }
-        System.out.println();
     }
 }
