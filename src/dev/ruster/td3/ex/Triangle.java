@@ -8,21 +8,24 @@ public record Triangle(Scanner scan) {
 
     public Triangle(@NotNull final Scanner scan) {
         this.scan = scan;
+
+        System.out.print("Périmètre : ");
+        System.out.println("Trianges : " + (triangle(scan.nextInt())));
     }
 
-    public void triangle(int n) {
-        int adj = 1;
-        int opp = 1;
-        double hyp = Math.sqrt(adj * adj + opp * opp);
-        boolean hasNext = true;
+    public int triangle(int n) {
+        int count = 0;
 
-        while(hasNext) {
-            if(adj + opp + hyp < n) {
-                hasNext = false;
+        for(int i = 0; i < n; i++) {
+            for(int j = 0; j < n; j++) {
+                for(int k = 0; k < n; k++) {
+                    if(Math.pow(i + 1, 2) + Math.pow(j + 1, 2) == Math.pow(k + 1, 2)) {
+                        count++;
+                    }
+                }
             }
-            adj++;
-            opp++;
         }
 
+        return count;
     }
 }

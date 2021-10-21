@@ -19,7 +19,7 @@ public record ComplexPyramid(Scanner scan) {
         */
 
         System.out.print("n : ");
-        pyramid(scan.nextInt());
+        complexPyramid(scan.nextInt());
         System.out.println();
     }
 
@@ -59,7 +59,7 @@ public record ComplexPyramid(Scanner scan) {
         }
     }
 
-    public void pyramid(int n) {
+    public void complexPyramid(int n) {
         int count = -1;
 
         for(int i = 0; i < n; i++) {
